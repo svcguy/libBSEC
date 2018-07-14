@@ -19,7 +19,7 @@
 
 /**
   * @brief Function to start up the BSEC library
-  * @param 
+  * @param version - a pointer to hold the verison of the library
   * @retval 1 on success, 0 on failure
   */
 int8_t bsec_begin(bsec_version_t *version)
@@ -29,7 +29,7 @@ int8_t bsec_begin(bsec_version_t *version)
   // Get library version
   ret = bsec_get_version( version );
   if( ret != BSEC_OK )
-  {
+  { 
     return 0;
   }
 
@@ -41,6 +41,7 @@ int8_t bsec_begin(bsec_version_t *version)
   }
 
   // Sensor subscription
+  //  This sets up the number of "virtual sensors" (outputs) in low power (LP) mode for the BME680
   bsec_sensor_configuration_t requestedVirtualSensors[7];
   uint8_t numRequestedVirtualSensors = 7;
 

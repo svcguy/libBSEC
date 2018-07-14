@@ -12,6 +12,6 @@ These files also assume the use of the BME680 sensor, but the BSEC library is co
 
 It's very likely the files in this repo will need to be changed to suit your application
 
-This simple integration sets up the max number of library outputs (7) and inputs (5) in low power (LP) mode
+This simple integration sets up the number of library outputs (7) and inputs (5) in low power (LP) mode for the BME680
 The BSEC library requires nanosecond resolution timestamps be passed to it.  I've used microsecond timestamps multiplied by 1000 with luck.
 It also has pretty strict timing requirements for calling the functions.  See the integration guide in the /doc folder of the BSEC download
